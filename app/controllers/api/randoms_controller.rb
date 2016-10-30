@@ -3,6 +3,7 @@ class Api::RandomsController < ApiController
     movie = ENV["MOVIEDB_KEY"]
     nasa = ENV["NASA_KEY"]
     beer = ENV["BREWERYDB_KEY"]
+    giphy = ENV["GIPHY_KEY"]
 
     choice = params['choice']
     url = ''
@@ -22,6 +23,7 @@ class Api::RandomsController < ApiController
       url = "https://api.brewerydb.com/v2/beer/random?hasLabels=Y&key=#{beer}" if choice == 'beer'
       url = "https://api.nasa.gov/planetary/apod?api_key=#{nasa}" if choice == 'apod'
       url = "http://taco-randomizer.herokuapp.com/random/?full-taco=true" if choice == 'taco'
+      url = "http://api.giphy.com/v1/gifs/random?api_key=#{giphy}" if choice == 'giphy'
 
       random = HTTParty.get(url)
     end
