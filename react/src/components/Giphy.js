@@ -4,7 +4,8 @@ class Giphy extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      giphy: ''
+      giphy: '',
+      source: ''
     };
   }
 
@@ -15,15 +16,22 @@ class Giphy extends Component {
       data: { choice: 'giphy' }
     })
     .done(data => {
-      this.setState({ giphy: data.data.data.image_url })
+      this.setState({
+        giphy: data.data.data.image_url,
+        source: data.source
+      })
     });
   }
 
   render() {
     return (
       <div className="random-fact">
-      <img src={this.state.giphy} />
-      
+      <img src={this.state.giphy} className="giphy"/>
+
+      <div className="source">
+        <img src={this.state.source} />
+      </div>
+
       </div>
     );
   }
