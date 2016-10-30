@@ -1,28 +1,38 @@
-== README
+# Randomizer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Bored? Need something to watch, read, look at? Just randomize!
 
-Things you may want to cover:
+======
 
-* Ruby version
+### Set up
 
-* System dependencies
+git clone `https://github.com/anniehck/randomizer.git`
 
-* Configuration
+bundle install
 
-* Database creation
+npm install
 
-* Database initialization
+rake db:create
 
-* How to run the test suite
+rake db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
+rails server
 
-* Deployment instructions
+npm start
 
-* ...
+### Technologies
 
+* Ruby 2.3.1
+* React.js
+* Rails 4.2.6
+* Devise
+* Foundation
+* Sass
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### API Sources
+
+* NASA
+* Movie DB
+* Beer DB
+* Astrocast
+* Tacofancy
