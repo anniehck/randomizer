@@ -42,7 +42,6 @@ class App extends Component {
     } else if (this.state.choice === 'taco') {
       currentContent = <Taco />
     }
-
     this.setState({
       content: currentContent
     });
@@ -80,6 +79,7 @@ class App extends Component {
             <option value="taco">Taco</option>
             <option value="apod">Astronomy Photo of the Day</option>
           </select>
+
           <input type="submit" value="Randomize" />
         </form>
 
