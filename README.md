@@ -1,38 +1,45 @@
 # Randomizer
 
-#### Bored? Need something to watch, read, look at? Just randomize!
+#### Looking to cure boredom? Time to hit the Randomizer!
+
+https://the-randomizer.herokuapp.com/
 
 ======
 
-### Set up
+### Configuration
 
-git clone `https://github.com/anniehck/randomizer.git`
+* git clone `https://github.com/anniehck/randomizer.git`
 
-bundle install
+* bundle install
 
-npm install
+* npm install
 
-rake db:create
+* rake db:create
 
-rake db:migrate
+* rake db:migrate
 
-rails server
+* rails server
 
-npm start
+* npm start
+
+======
 
 ### Technologies
 
 * Ruby 2.3.1
 * React.js
 * Rails 4.2.6
+* PostgresQL
 * Devise
 * Foundation
 * Sass
+
+======
 
 ### API Sources
 
 * NASA
 * Movie DB
-* Beer DB
+* Brewery DB
 * Astrocast
 * Tacofancy
