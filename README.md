@@ -2,25 +2,29 @@
 
 #### Looking to cure boredom? Time to hit the Randomizer!
 
-https://the-randomizer.herokuapp.com/
+See all the rage at https://the-randomizer.herokuapp.com
 
 ======
 
-### Configuration
+### Get Started
 
-* git clone `https://github.com/anniehck/randomizer.git`
+git clone `https://github.com/anniehck/randomizer.git`
 
-* bundle install
+`bundle install`
 
-* npm install
+`npm install`
 
-* rake db:create
+`rake db:create`
 
-* rake db:migrate
+`rake db:migrate`
 
-* rails server
+`rails server`
 
-* npm start
+`npm start`
+
+visit `localhost:3000` on your browser
+
+**Note:** *You will need your own API key for some pages*
 
 ======
 
