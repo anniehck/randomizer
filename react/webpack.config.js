@@ -4,7 +4,8 @@ var config = {
   },
   output: {
     path: './app/assets/javascripts',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   module: {
     loaders: [
@@ -28,7 +29,5 @@ if (process.env.NODE_ENV === 'production') {
 
   ];
 }
-
-// require('dotenv').config();
 
 module.exports = config;
