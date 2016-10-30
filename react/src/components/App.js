@@ -4,6 +4,7 @@ import SpaceFact from './SpaceFact';
 import Beer from './Beer';
 import HorrorMovie from './HorrorMovie';
 import Taco from './Taco';
+import Giphy from './Giphy';
 
 
 class App extends Component {
@@ -41,8 +42,9 @@ class App extends Component {
       currentContent = <SpaceFact />
     } else if (this.state.choice === 'taco') {
       currentContent = <Taco />
+    } else if (this.state.choice === 'giphy') {
+      currentContent = <Giphy />
     }
-
     this.setState({
       content: currentContent
     });
@@ -77,9 +79,11 @@ class App extends Component {
             <option value="movie">Horror Movie</option>
             <option value="space-fact">Space fact</option>
             <option value="beer">Beer</option>
+            <option value="giphy">Giphy</option>
             <option value="taco">Taco</option>
             <option value="apod">Astronomy Photo of the Day</option>
           </select>
+
           <input type="submit" value="Randomize" />
         </form>
 

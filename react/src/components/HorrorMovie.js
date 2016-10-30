@@ -20,8 +20,9 @@ class HorrorMovie extends Component {
       data: { choice: 'movie' }
     })
     .done(data => {
-      let index = Math.floor(Math.random() * data.data.results.length);
-      let movie_data = data.data.results[index];
+      // let index = Math.floor(Math.random() * data.data.results.length);
+      // let movie_data = data.data.results[index];
+      let movie_data = data.data
       let posterUrl = `https://image.tmdb.org/t/p/w300${movie_data.poster_path}`;
       let movie_link = `https://www.themoviedb.org/movie/${movie_data.id}`;
       this.setState({

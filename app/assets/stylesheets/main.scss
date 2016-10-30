@@ -45,7 +45,7 @@ ul {
   .random-fact {
     width: 65%;
     margin: 0 auto;
-    padding-top: 20%;
+    padding-top: 10%;
     min-height: 100vh;
     h4 {
       color: #4d536d;
@@ -53,6 +53,14 @@ ul {
       &:hover {
         color: #b7bbcd;
       }
+    }
+    img.giphy {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .source {
+      width: 50%;
+      margin: 20% auto;
     }
   }
   .apod {
