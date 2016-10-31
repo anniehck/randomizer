@@ -5,7 +5,7 @@ import Beer from './Beer';
 import HorrorMovie from './HorrorMovie';
 import Taco from './Taco';
 import Giphy from './Giphy';
-import GuitarChord from './GuitarChord';
+import Chord from './Chord';
 
 class App extends Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class App extends Component {
     } else if (this.state.choice === 'taco') {
       currentContent = <Taco />;
     } else if (this.state.choice === 'chord') {
-      currentContent = <GuitarChord />;
+      currentContent = <Chord />;
     } else if (this.state.choice === 'giphy') {
       currentContent = <Giphy />;
     }
@@ -83,7 +83,7 @@ class App extends Component {
             <option value="beer">Beer</option>
             <option value="giphy">Giphy</option>
             <option value="taco">Taco</option>
-            <option value="chord">Guitar Chord</option>
+            <option value="chord">Chord</option>
             <option value="apod">Astronomy Photo of the Day</option>
           </select>
 

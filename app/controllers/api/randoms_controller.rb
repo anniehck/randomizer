@@ -1,28 +1,5 @@
 class Api::RandomsController < ApiController
   def create
-    movie = ENV["MOVIEDB_KEY"]
-    nasa = ENV["NASA_KEY"]
-    beer = ENV["BREWERYDB_KEY"]
-    giphy = ENV["GIPHY_KEY"]
-    guitar = ENV["GUITAR_PARTY_KEY"]
-
-    chords = []
-    root = ['A', 'Ab', 'A#', 'B', 'Bb', 'C', 'C#', 'D', 'Db', 'D#', 'E', 'Eb', 'F', 'F#', 'G', 'Gb', 'G#']
-    quality = ['m', 'maj', 'aug', 'dim']
-    number = ['7']
-
-    chords += root
-    root.each do |chord|
-      quality.each do |qual|
-        x = "#{chord}#{qual}"
-        chords << x
-        number.each do |num|
-          y = "#{chord}#{qual}#{num}"
-          chords << y
-        end
-      end
-    end
-
     choice = params['choice']
     url = ''
     credit = ''
@@ -42,8 +19,8 @@ class Api::RandomsController < ApiController
       credit = path_to_asset('sources/giphy_power.png')
       random = HTTParty.get(url)
     elsif choice == 'chord'
-      chord = chords.sample
-      url = "http://api.guitarparty.com/v2/chords/\?query\=#{chord}"
+      # chord = chords.sample
+      url = "http://api.guitarparty.com/v2/chords/\?query\=#{chord_combination}"
       random = HTTParty.get(url, headers: { "Guitarparty-Api-Key" => "#{guitar}"})
     else
       url = "http://astrocast.herokuapp.com/bites" if choice == 'space-fact'
@@ -54,7 +31,6 @@ class Api::RandomsController < ApiController
       random = HTTParty.get(url)
     end
 
-
     respond_to do |format|
       format.json do
         render json: { data: random, source: credit }
@@ -63,9 +39,47 @@ class Api::RandomsController < ApiController
   end
 
   private
+  def movie
+    ENV["MOVIEDB_KEY"]
+  end
+
+  def nasa
+    ENV["NASA_KEY"]
+  end
+
+  def beer
+    ENV["BREWERYDB_KEY"]
+  end
+
+  def giphy
+    ENV["GIPHY_KEY"]
+  end
+
+  def guitar
+    ENV["GUITAR_PARTY_KEY"]
+  end
 
   def path_to_asset(asset)
     ApplicationController.helpers.asset_path(asset)
   end
 
+  def chord_combination
+    chords = []
+    root = ['A', 'Ab', 'A#', 'B', 'Bb', 'C', 'C#', 'D', 'Db', 'D#', 'E', 'Eb', 'F', 'F#', 'G', 'Gb', 'G#']
+    quality = ['m', 'maj', 'aug', 'dim']
+    number = ['7']
+
+    chords += root
+    root.each do |chord|
+      quality.each do |qual|
+        x = "#{chord}#{qual}"
+        chords << x
+        number.each do |num|
+          y = "#{chord}#{qual}#{num}"
+          chords << y
+        end
+      end
+    end
+    chords.sample
+  end
 end

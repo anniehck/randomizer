@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class GuitarChord extends Component {
+class Chord extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,13 +32,13 @@ class GuitarChord extends Component {
 
   render() {
     return (
-      <div className="random-fact">
-      <img src={this.state.image} /><br />
-      <h2>{this.state.chord}</h2>
+      <div className="chord">
+      <h3>{this.state.chord}</h3>
+      <img src={this.state.image} className="chord"/><br />
       <p>{this.state.instrument} in {this.state.tuning}</p>
       </div>
     );
   }
 }
 
-export default GuitarChord;
+export default Chord;
