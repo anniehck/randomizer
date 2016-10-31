@@ -5,7 +5,7 @@ import Beer from './Beer';
 import HorrorMovie from './HorrorMovie';
 import Taco from './Taco';
 import Giphy from './Giphy';
-
+import Chord from './Chord';
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class App extends Component {
       region: '',
       country: '',
       latitude: '',
-      longitude: '',
+      longitude: ''
       };
       this.handleChange = this.handleChange.bind(this);
       this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -33,17 +33,19 @@ class App extends Component {
     event.preventDefault();
     let currentContent;
     if (this.state.choice === 'apod') {
-      currentContent = <Apod />
+      currentContent = <Apod />;
     } else if (this.state.choice === 'movie') {
-      currentContent = <HorrorMovie />
+      currentContent = <HorrorMovie />;
     } else if (this.state.choice === 'beer') {
-      currentContent = <Beer />
+      currentContent = <Beer />;
     } else if (this.state.choice === 'space-fact') {
-      currentContent = <SpaceFact />
+      currentContent = <SpaceFact />;
     } else if (this.state.choice === 'taco') {
-      currentContent = <Taco />
+      currentContent = <Taco />;
+    } else if (this.state.choice === 'chord') {
+      currentContent = <Chord />;
     } else if (this.state.choice === 'giphy') {
-      currentContent = <Giphy />
+      currentContent = <Giphy />;
     }
     this.setState({
       content: currentContent
@@ -81,6 +83,7 @@ class App extends Component {
             <option value="beer">Beer</option>
             <option value="giphy">Giphy</option>
             <option value="taco">Taco</option>
+            <option value="chord">Chord</option>
             <option value="apod">Astronomy Photo of the Day</option>
           </select>
 
