@@ -2,7 +2,7 @@
 
 #### Looking to cure boredom? Time to hit the Randomizer!
 
-See all the rage at https://the-randomizer.herokuapp.com
+See all the rage at: https://the-randomizer.herokuapp.com
 
 ======
 
@@ -47,3 +47,5 @@ visit `localhost:3000` on your browser
 * Brewery DB
 * Astrocast
 * Tacofancy
+* Giphy
+* Guitarparty

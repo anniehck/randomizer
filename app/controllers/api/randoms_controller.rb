@@ -19,7 +19,6 @@ class Api::RandomsController < ApiController
       credit = path_to_asset('sources/giphy_power.png')
       random = HTTParty.get(url)
     elsif choice == 'chord'
-      # chord = chords.sample
       url = "http://api.guitarparty.com/v2/chords/\?query\=#{chord_combination}"
       random = HTTParty.get(url, headers: { "Guitarparty-Api-Key" => "#{guitar}"})
     else
